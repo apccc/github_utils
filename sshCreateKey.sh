@@ -13,4 +13,9 @@ if [ ! -f "$F" ];then
   exit 1
 fi
 echo "Key Created: $F"
+P="${F}.pub"
+if [ -f "$P" ];then
+  echo "Public file $P :"
+  cat $P
+fi
 exit 0
