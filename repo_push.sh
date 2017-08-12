@@ -1,6 +1,9 @@
 #!/bin/bash
 REPOSITORY=`echo "$1" | grep -oe '[a-zA-Z0-9_.-]*'`
 if [ -z "$REPOSITORY" ];then
+  REPOSITORY=`~/github_utils/getCurrentRepository.sh`
+fi
+if [ -z "$REPOSITORY" ];then
   echo "Repository Not Set!"
   exit 0
 fi
